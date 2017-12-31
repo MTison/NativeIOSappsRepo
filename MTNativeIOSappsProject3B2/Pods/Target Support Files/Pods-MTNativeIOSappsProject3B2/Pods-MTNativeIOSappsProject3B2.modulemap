@@ -1,0 +1,6 @@
+framework module Pods_MTNativeIOSappsProject3B2 {
+  umbrella header "Pods-MTNativeIOSappsProject3B2-umbrella.h"
+
+  export *
+  module * { export * }
+}
