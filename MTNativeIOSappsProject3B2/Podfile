@@ -1,6 +1,10 @@
+# Uncomment the next line to define a global platform for your project
 platform :ios, '11.0'
 
 target 'MTNativeIOSappsProject3B2' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'KituraKit', :git => 'https://github.com/IBM-Swift/KituraKit.git', :branch => 'pod'
+
+  # Pods for MTNativeIOSappsProject3B2
+pod 'KituraKit', :git => 'https://github.com/IBM-Swift/KituraKit.git', :branch => 'pod'
 end

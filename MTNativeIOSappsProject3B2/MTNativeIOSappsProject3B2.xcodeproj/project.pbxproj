@@ -16,7 +16,6 @@
 		B40D4EB41FFBC6DB00148426 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40D4EB31FFBC6DB00148426 /* Car.swift */; };
 		B46955E71FFDB7C30042AA18 /* KituraCarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46955E61FFDB7C30042AA18 /* KituraCarService.swift */; };
 		B4B20DC81FB5A64000258295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20DC71FB5A64000258295 /* AppDelegate.swift */; };
-		B4B20DCA1FB5A64000258295 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20DC91FB5A64000258295 /* ViewController.swift */; };
 		B4B20DCD1FB5A64000258295 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B20DCB1FB5A64000258295 /* Main.storyboard */; };
 		B4D3F33F1FE8A41A00C934F1 /* KituraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3F33E1FE8A41A00C934F1 /* KituraService.swift */; };
 		B4D3F3411FE8B9AA00C934F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3F3401FE8B9AA00C934F1 /* User.swift */; };
@@ -38,7 +37,6 @@
 		B46955E61FFDB7C30042AA18 /* KituraCarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KituraCarService.swift; sourceTree = "<group>"; };
 		B4B20DC41FB5A64000258295 /* MTNativeIOSappsProject3B2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTNativeIOSappsProject3B2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B20DC71FB5A64000258295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B4B20DC91FB5A64000258295 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B4B20DCC1FB5A64000258295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4B20DD31FB5A64000258295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D3F33E1FE8A41A00C934F1 /* KituraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KituraService.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				B4D3F3421FE94CC400C934F1 /* RegisterViewController.swift */,
-				B4B20DC91FB5A64000258295 /* ViewController.swift */,
 				B4D3F34C1FE97ABF00C934F1 /* LoginViewController.swift */,
 				B40D4EAB1FF978AD00148426 /* WelcomeViewController.swift */,
 				B40D4EAD1FF9790300148426 /* CarsViewController.swift */,
@@ -288,7 +285,6 @@
 				B40D4EB21FFBC5CC00148426 /* CarCellView.swift in Sources */,
 				B4D3F33F1FE8A41A00C934F1 /* KituraService.swift in Sources */,
 				B40D4EB41FFBC6DB00148426 /* Car.swift in Sources */,
-				B4B20DCA1FB5A64000258295 /* ViewController.swift in Sources */,
 				B4B20DC81FB5A64000258295 /* AppDelegate.swift in Sources */,
 				B40D4EAC1FF978AD00148426 /* WelcomeViewController.swift in Sources */,
 			);

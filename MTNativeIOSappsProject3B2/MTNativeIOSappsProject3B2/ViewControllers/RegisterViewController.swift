@@ -18,10 +18,8 @@ class RegisterViewController: UIViewController {
     var userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.hideKeyboard))
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
     
     @IBAction func registerButtonClicked(_ sender: Any) {
@@ -108,6 +106,10 @@ class RegisterViewController: UIViewController {
         
         // Go back to login screen
         displayAlert(message: "You are registered with email: \(email)", type: "succes")
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     func displayAlert(message: String, type: String) {

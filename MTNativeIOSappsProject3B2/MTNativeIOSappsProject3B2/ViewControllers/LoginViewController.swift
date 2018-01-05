@@ -20,10 +20,8 @@ class LoginViewController: UIViewController {
     var userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.hideKeyboard))
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
     
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) {
@@ -32,8 +30,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonPushed(_ sender: Any) {
         // Hide the keyboard when pushing the login button
-        emailText.resignFirstResponder()
-        passwordText.resignFirstResponder()
+        hideKeyboard()
         
         let email = emailText.text!
         let password = passwordText.text!
@@ -71,6 +68,11 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @objc func hideKeyboard() {
+        // force end all the editing (use of keyboard) in the View
+        view.endEditing(true)
     }
     
     func notifyUser(message: String, type: String) {

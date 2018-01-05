@@ -26,7 +26,6 @@ class CarsViewController: UIViewController {
                 self.carTableView.reloadData()
             }
         }
-        //cars.append(Car(type: "E200", brand: Car.Brand.values[1], experience: "Drives nice"))
         
         // LongPressGestureRecognizer to listen to long press on screen, when long press occures, then do action accordingly
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(CarsViewController.longPress))

@@ -1,0 +1,4 @@
+module agentcore {
+    umbrella "/Users/matthiastison/Documents/HoGent_Work/NativeApps_IOS/NativeIOSappsRepo/CarServer/.build/checkouts/omr-agentcore-1826539389957424207/src/agentcore/include"
+    export *
+}

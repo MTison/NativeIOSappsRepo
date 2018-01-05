@@ -28,6 +28,9 @@ class AddCarViewController: UITableViewController {
             typeText.text = car.type
             experienceText.text = car.experience
         }
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddCarViewController.hideKeyboard))
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
     
     @IBAction func saveButtonPushed(_ sender: Any) {
@@ -57,6 +60,10 @@ class AddCarViewController: UITableViewController {
         default:
             fatalError("unknown segue")
         }
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
 }
 
