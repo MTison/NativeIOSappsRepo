@@ -31,7 +31,7 @@ class KituraService {
         db.post("users", data: user) {
             (result: User?, error: RequestError?) in
             if let error = error {
-                print("Error while creating the user \(user.firstname): \(error.localizedDescription)")
+                print("Error while creating the user \(user.email): \(error.localizedDescription)")
             }
         }
     }
@@ -40,7 +40,7 @@ class KituraService {
         db.put("users", identifier: _id, data: user) {
             (result: User?, error: RequestError?) in
             if let error = error {
-                print("Error while updating the user \(user.firstname): \(error.localizedDescription)")
+                print("Error while updating the user \(user.email): \(error.localizedDescription)")
             }
         }
     }

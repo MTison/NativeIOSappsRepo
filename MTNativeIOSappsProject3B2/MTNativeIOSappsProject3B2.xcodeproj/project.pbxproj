@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		8FBCEBB0076D94D4F2F89B3E /* Pods_MTNativeIOSappsProject3B2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80185C6F56CF058BC7C0D728 /* Pods_MTNativeIOSappsProject3B2.framework */; };
 		B40D4EAA1FF331D500148426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B40D4EA91FF331D500148426 /* Assets.xcassets */; };
+		B40D4EAC1FF978AD00148426 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40D4EAB1FF978AD00148426 /* WelcomeViewController.swift */; };
+		B40D4EAE1FF9790300148426 /* CarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40D4EAD1FF9790300148426 /* CarsViewController.swift */; };
+		B40D4EB01FF9795100148426 /* AddCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40D4EAF1FF9795100148426 /* AddCarViewController.swift */; };
+		B40D4EB21FFBC5CC00148426 /* CarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40D4EB11FFBC5CC00148426 /* CarCellView.swift */; };
+		B40D4EB41FFBC6DB00148426 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40D4EB31FFBC6DB00148426 /* Car.swift */; };
+		B46955E71FFDB7C30042AA18 /* KituraCarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46955E61FFDB7C30042AA18 /* KituraCarService.swift */; };
 		B4B20DC81FB5A64000258295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20DC71FB5A64000258295 /* AppDelegate.swift */; };
 		B4B20DCA1FB5A64000258295 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20DC91FB5A64000258295 /* ViewController.swift */; };
 		B4B20DCD1FB5A64000258295 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B20DCB1FB5A64000258295 /* Main.storyboard */; };
@@ -24,6 +30,12 @@
 		9930DF264DF6B4B3B19EA1FF /* Pods-MTNativeIOSappsProject3B2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTNativeIOSappsProject3B2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MTNativeIOSappsProject3B2/Pods-MTNativeIOSappsProject3B2.debug.xcconfig"; sourceTree = "<group>"; };
 		A54ED37204A0349FB39E7C7C /* Pods-MTNativeIOSappsProject3B2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTNativeIOSappsProject3B2.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTNativeIOSappsProject3B2/Pods-MTNativeIOSappsProject3B2.release.xcconfig"; sourceTree = "<group>"; };
 		B40D4EA91FF331D500148426 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B40D4EAB1FF978AD00148426 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		B40D4EAD1FF9790300148426 /* CarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewController.swift; sourceTree = "<group>"; };
+		B40D4EAF1FF9795100148426 /* AddCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarViewController.swift; sourceTree = "<group>"; };
+		B40D4EB11FFBC5CC00148426 /* CarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCellView.swift; sourceTree = "<group>"; };
+		B40D4EB31FFBC6DB00148426 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		B46955E61FFDB7C30042AA18 /* KituraCarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KituraCarService.swift; sourceTree = "<group>"; };
 		B4B20DC41FB5A64000258295 /* MTNativeIOSappsProject3B2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTNativeIOSappsProject3B2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B20DC71FB5A64000258295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4B20DC91FB5A64000258295 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				B4D3F33E1FE8A41A00C934F1 /* KituraService.swift */,
+				B46955E61FFDB7C30042AA18 /* KituraCarService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -111,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				B4D3F3401FE8B9AA00C934F1 /* User.swift */,
+				B40D4EB31FFBC6DB00148426 /* Car.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -118,6 +132,7 @@
 		B4D3F33C1FE8A37800C934F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B40D4EB11FFBC5CC00148426 /* CarCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +143,9 @@
 				B4D3F3421FE94CC400C934F1 /* RegisterViewController.swift */,
 				B4B20DC91FB5A64000258295 /* ViewController.swift */,
 				B4D3F34C1FE97ABF00C934F1 /* LoginViewController.swift */,
+				B40D4EAB1FF978AD00148426 /* WelcomeViewController.swift */,
+				B40D4EAD1FF9790300148426 /* CarsViewController.swift */,
+				B40D4EAF1FF9795100148426 /* AddCarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -264,9 +282,15 @@
 				B4D3F34D1FE97ABF00C934F1 /* LoginViewController.swift in Sources */,
 				B4D3F3411FE8B9AA00C934F1 /* User.swift in Sources */,
 				B4D3F3431FE94CC400C934F1 /* RegisterViewController.swift in Sources */,
+				B40D4EB01FF9795100148426 /* AddCarViewController.swift in Sources */,
+				B46955E71FFDB7C30042AA18 /* KituraCarService.swift in Sources */,
+				B40D4EAE1FF9790300148426 /* CarsViewController.swift in Sources */,
+				B40D4EB21FFBC5CC00148426 /* CarCellView.swift in Sources */,
 				B4D3F33F1FE8A41A00C934F1 /* KituraService.swift in Sources */,
+				B40D4EB41FFBC6DB00148426 /* Car.swift in Sources */,
 				B4B20DCA1FB5A64000258295 /* ViewController.swift in Sources */,
 				B4B20DC81FB5A64000258295 /* AppDelegate.swift in Sources */,
+				B40D4EAC1FF978AD00148426 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

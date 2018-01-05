@@ -10,28 +10,28 @@ import Foundation
 
 class User: NSObject, NSCoding, Codable {
     var _id: String
-    var firstname: String
-    var lastname: String
+    var adressingName: String
     var email: String
+    var password: String
     
-    init(firstname: String, lastname: String, email: String, id: String? = "" ) {
-        self.firstname = firstname
-        self.lastname = lastname
+    init(adressingName: String, email: String, password: String, id: String? = "" ) {
+        self.adressingName = adressingName
         self.email = email
+        self.password = password
         self._id = id!
     }
     
     required init(coder aDecoder: NSCoder) {
         _id = (aDecoder.decodeObject(forKey: "id") as? String)!
-        firstname = aDecoder.decodeObject(forKey: "firstname") as! String
-        lastname = aDecoder.decodeObject(forKey: "lastname") as! String
+        adressingName = aDecoder.decodeObject(forKey: "adressingName") as! String
         email = aDecoder.decodeObject(forKey: "email") as! String
+        password = aDecoder.decodeObject(forKey: "password") as! String
     }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(_id, forKey: "id")
-        aCoder.encode(firstname, forKey: "firstname")
-        aCoder.encode(lastname, forKey: "lastname")
+        aCoder.encode(adressingName, forKey: "adressingName")
         aCoder.encode(email, forKey: "email")
+        aCoder.encode(password, forKey: "password")
     }
 }

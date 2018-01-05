@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="CarInlog" id="yN7-aw-yoe">
-                                <rect key="frame" x="14.677601196501655" y="0.89953907665653787" width="343.00000000000006" height="667.00000000000023"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="CarIcon300x300" id="yN7-aw-yoe">
+                                <rect key="frame" x="0.0" y="1" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
@@ -31,6 +31,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CarInlog" width="1697" height="2400"/>
+        <image name="CarIcon300x300" width="300" height="300"/>
     </resources>
 </document>
