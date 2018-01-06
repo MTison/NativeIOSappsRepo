@@ -39,7 +39,7 @@ class KituraCarService {
     }
     
     func update(withType type: String,to car: Car) {
-        db.put("/cars", identifier: type, data: car) {
+        db.put("/", identifier: type, data: car) {
             (result: Car?, error: RequestError?) in
             if let error = error {
                 print("Error while updating the car \(car.brand.rawValue) - \(car.type): \(error.localizedDescription)")
@@ -48,7 +48,7 @@ class KituraCarService {
     }
     
     func delete(withType type: String) {
-        db.delete("/cars", identifier: type) {
+        db.delete("/car", identifier: type) {
             (error: RequestError?) in
             if let error = error {
                 print("Error while deleting the car with type \(type): \(error.localizedDescription)")
