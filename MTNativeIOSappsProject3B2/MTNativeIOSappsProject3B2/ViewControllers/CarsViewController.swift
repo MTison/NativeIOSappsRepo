@@ -19,7 +19,11 @@ class CarsViewController: UIViewController {
     var indexCarToEdit: IndexPath!
     
     override func viewDidLoad() {
-        KituraCarService.http.getCars {
+        // get the user that is currently logged in -> using his id to get all the cars linked to the user
+        let decoded = userDefaults.object(forKey:"loggedUser") as! Data
+        let loggedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! User
+        
+        KituraCarService.http.getCarsWithUserId(userId: loggedUser._id) {
             if let cars = $0 {
                 self.cars = cars
                 // reload the table's data so changes can be seen
@@ -31,6 +35,9 @@ class CarsViewController: UIViewController {
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(CarsViewController.longPress))
         longPressRecognizer.minimumPressDuration = 1 // #seconds the user has to press before action is taken
         carTableView.addGestureRecognizer(longPressRecognizer)
+        
+        let onePressRecognizer = UITapGestureRecognizer(target: self, action: #selector(CarsViewController.onePress))
+        view.addGestureRecognizer(onePressRecognizer)
     }
     
     @IBAction func logoutButtonPushed(_ sender: Any) {
@@ -83,12 +90,21 @@ class CarsViewController: UIViewController {
     
     // we have to add "@obj" in swift4, before it was implicit
     @objc /* -> SOURCE: StackOverflow: '#selector' refers to a method that is not exposed to Objective-C*/
-        func longPress(_ press:UILongPressGestureRecognizer) {
+        func longPress(press:UILongPressGestureRecognizer) {
             if press.state == .began {
                 let touchPoint = press.location(in: carTableView)
                 self.indexCarToEdit = carTableView.indexPathForRow(at: touchPoint)
                 self.performSegue(withIdentifier: "editCar", sender: self)
             }
+    }
+    @objc func onePress(press: UITapGestureRecognizer) {
+        // deselect all cells that may be selected in the tableView
+        let selectedCells = carTableView.indexPathsForSelectedRows
+        if (selectedCells != nil) {
+            for cellIndex in selectedCells! {
+                carTableView.deselectRow(at: cellIndex, animated: true)
+            }
+        }
     }
 }
 
@@ -116,7 +132,7 @@ extension CarsViewController: UITableViewDelegate {
             (action, view, completionHandler) in
                 let car = self.cars.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
-                KituraCarService.http.delete(withType: car.type)
+                KituraCarService.http.delete(withId: car.carId)
                 completionHandler(true)
         }
         return UISwipeActionsConfiguration(actions: [delete])

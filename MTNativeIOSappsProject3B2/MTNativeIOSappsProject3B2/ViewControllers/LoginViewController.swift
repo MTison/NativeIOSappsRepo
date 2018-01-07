@@ -37,6 +37,11 @@ class LoginViewController: UIViewController {
         
         var registeredUsers = userDefaults.object(forKey: "registeredUsers") as? [String:Data] ?? [String:Data]()
         
+        // as a reminder for myself :)
+        for user in registeredUsers {
+            print(user.key)
+        }
+        
         loginButton.isEnabled = false
         registerButton.isEnabled = false
         loginButton.setTitle("Loading..", for: .normal)

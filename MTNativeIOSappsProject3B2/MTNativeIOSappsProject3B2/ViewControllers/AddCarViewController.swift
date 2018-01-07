@@ -16,6 +16,7 @@ class AddCarViewController: UITableViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var car: Car?
+    var userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         // looking if we have to edit an existing car
@@ -44,19 +45,20 @@ class AddCarViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "addedCar"?:
+            // get the user that is currently logged in -> using his id to link it with the newly created car
+            let decoded = userDefaults.object(forKey:"loggedUser") as! Data
+            let loggedUser = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! User
             // make a new car with the values in the view, when saving
             let brand = Car.Brand.values[brandPicker.selectedRow(inComponent: 0)]
-            car = Car(type: typeText.text!, brand: brand, experience: experienceText.text)
-            print(car!.type)
+            car = Car(type: typeText.text!, brand: brand, experience: experienceText.text,userId: loggedUser._id)
         case "editedCar"?:
-            let type = car!.type
             car!.type = typeText.text!
             car!.experience = experienceText.text // why no unwrapping needed?
             
             let brand = Car.Brand.values[brandPicker.selectedRow(inComponent: 0)]
             car!.brand = brand
             
-            KituraCarService.http.update(withType: type, to: car!)
+            KituraCarService.http.update(withId: car!.carId, to: car!)
         default:
             fatalError("unknown segue")
         }

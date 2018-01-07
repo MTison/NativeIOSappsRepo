@@ -26,6 +26,17 @@ class KituraCarService {
             }
         }
     }
+    func getCarsWithUserId(userId: String, completion: @escaping ([Car]?) -> Void) {
+        db.get("/cars/", identifier: userId) {
+            (cars: [Car]?, error: RequestError?) in
+            if let error = error {
+                print("Error while loading cars: \(error.localizedDescription)")
+            }
+            DispatchQueue.main.async {
+                completion(cars)
+            }
+        }
+    }
     
     func create(_ car: Car) {
         db.post("/cars", data: car) {
@@ -38,8 +49,8 @@ class KituraCarService {
         }
     }
     
-    func update(withType type: String,to car: Car) {
-        db.put("/", identifier: type, data: car) {
+    func update(withId carId: String,to car: Car) {
+        db.patch("/", identifier: carId, data: car) {
             (result: Car?, error: RequestError?) in
             if let error = error {
                 print("Error while updating the car \(car.brand.rawValue) - \(car.type): \(error.localizedDescription)")
@@ -47,11 +58,11 @@ class KituraCarService {
         }
     }
     
-    func delete(withType type: String) {
-        db.delete("/car", identifier: type) {
+    func delete(withId carId: String) {
+        db.delete("/car/", identifier: carId) {
             (error: RequestError?) in
             if let error = error {
-                print("Error while deleting the car with type \(type): \(error.localizedDescription)")
+                print("Error while deleting the car with Id \(carId): \(error.localizedDescription)")
             }
         }
     }

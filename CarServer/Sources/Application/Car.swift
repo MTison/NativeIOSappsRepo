@@ -25,13 +25,17 @@ class Car: Codable {
         static let values = [Brand.Hyundai, .Mercedes , .Honda, .Citroën, .Renault, .Toyota, .Volkswagen, .BMW, .Audi, .Fiat]
     }
     
+    var carId: String
     var type: String
     var brand: Brand
     var experience: String
+    var userId: String
     
-    init(type: String,brand: Brand,experience: String) {
+    init(type: String,brand: Brand,experience: String,userId: String,carId: String? = "") {
         self.type = type
         self.brand = brand
         self.experience = experience
+        self.userId = userId
+        self.carId = carId!
     }
 }

@@ -25,13 +25,27 @@ class Car: Codable {
         static let values = [Brand.Hyundai, .Mercedes , .Honda, .Citroën, .Renault, .Toyota, .Volkswagen, .BMW, .Audi, .Fiat]
     }
     
+    var carId: String
     var type: String
     var brand: Brand
     var experience: String
+    var userId: String
     
-    init(type: String,brand: Brand,experience: String) {
+    init(type: String,brand: Brand,experience: String, userId: String) {
         self.type = type
         self.brand = brand
         self.experience = experience
+        self.userId = userId
+        
+        //making an id for the car -> very unsafe code, but just for swift coding
+        var madeId = ""
+        let baseIntA = Int(arc4random_uniform(10000))
+        let baseIntB = Int(arc4random_uniform(10000))
+        let hexNumber = String(format: "%06X%06X", baseIntA, baseIntB)
+        
+        for char in type.reversed() {
+            madeId += String(char)
+        }
+        self.carId = madeId + hexNumber
     }
 }

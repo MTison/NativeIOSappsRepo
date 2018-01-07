@@ -13,10 +13,10 @@ class KituraService {
     private init() {}
     static let http = KituraService()
     
-    private let db = KituraKit(baseURL: "http://localhost:8080/api/")!
+    private let db = KituraKit(baseURL: "http://localhost:8080")!
     
     func getUsers(completion: @escaping ([User]?) -> Void) {
-        db.get("users") {
+        db.get("/users") {
             (users: [User]?, error: RequestError?) in
             if let error = error {
                 print("Error while loading users: \(error.localizedDescription)")
@@ -28,7 +28,7 @@ class KituraService {
     }
     
     func create(_ user: User) {
-        db.post("users", data: user) {
+        db.post("/users", data: user) {
             (result: User?, error: RequestError?) in
             if let error = error {
                 print("Error while creating the user \(user.email): \(error.localizedDescription)")
@@ -37,7 +37,7 @@ class KituraService {
     }
     
     func update(withId _id: String,to user: User) {
-        db.put("users", identifier: _id, data: user) {
+        db.put("/users", identifier: _id, data: user) {
             (result: User?, error: RequestError?) in
             if let error = error {
                 print("Error while updating the user \(user.email): \(error.localizedDescription)")
@@ -46,7 +46,7 @@ class KituraService {
     }
     
     func delete(withId _id: String) {
-        db.delete("users", identifier: _id) {
+        db.delete("/users", identifier: _id) {
             (error: RequestError?) in
             if let error = error {
                 print("Error while deleting the user with id \(_id): \(error.localizedDescription)")

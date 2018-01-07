@@ -29,7 +29,8 @@ public class App {
         
         router.post("/cars", handler: postCarHandler)
         router.get("/cars", handler: getCarHandler)
-        router.delete("/car", handler: deleteCarHandler)
+        router.get("/cars/", handler: getCarsWithUserIdHandler)
+        router.delete("/car/", handler: deleteCarHandler)
         router.patch("/", handler: updateCarHandler)
         
         router.post("/users", handler: postUserHandler)
@@ -38,11 +39,16 @@ public class App {
     
     // calls for cars
     func postCarHandler(car: Car, completion: (Car?, RequestError?) -> Void ) -> Void {
-        cars[car.type] = car
-        completion(cars[car.type], nil)
+        cars[car.carId] = car
+        completion(cars[car.carId], nil)
     }
     func getCarHandler(completion: ([Car]?, RequestError?) -> Void ) -> Void {
         let cars: [Car] = self.cars.map({ $0.value })
+        completion(cars, nil)
+    }
+    func getCarsWithUserIdHandler(userId: String, completion: ([Car]?, RequestError?) -> Void) -> Void {
+        // custom getter -> getting all cars with a specific userId (get cars of person x with given userId)
+        let cars: [Car] = self.cars.map({ $0.value }).filter({ $0.userId == userId })
         completion(cars, nil)
     }
     func deleteCarHandler(id: String, completion: (RequestError?) -> Void ) -> Void {

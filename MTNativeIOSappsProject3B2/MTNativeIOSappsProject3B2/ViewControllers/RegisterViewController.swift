@@ -91,9 +91,6 @@ class RegisterViewController: UIViewController {
             madeId += String(char)
         }
         madeId += hexNumber
-        print(madeId)
-        
-        // KituraService.http.create(user)
         
         // Make new user and store the data
         let user = User(adressingName: adressingName, email: email, password: password,id: madeId)
@@ -103,6 +100,7 @@ class RegisterViewController: UIViewController {
         users[email] = NSKeyedArchiver.archivedData(withRootObject: user)
        
         userDefaults.set(users, forKey:"registeredUsers")
+        KituraService.http.create(user)
         
         // Go back to login screen
         displayAlert(message: "You are registered with email: \(email)", type: "succes")
@@ -140,7 +138,7 @@ class RegisterViewController: UIViewController {
     func displayErrorField(field: UITextField, type: String? = "") {
         switch type!.lowercased() {
         case "default":
-            //cgColor used so the texfield can interpret them
+            //cgColor used so the texfield can interpret the color
             field.layer.borderColor = UIColor.lightGray.cgColor
             field.layer.borderWidth = 0.0
         default:
