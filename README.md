@@ -3,6 +3,8 @@
 
 # Usage of the application
 
+ ! Before anything else, be sure to have Kitura (through 'brew install kitura') and CocoaPods installed !
+
 There is a kitura server called “CarServer”, this project must be run together with the main project “MTNativeIOSappsProject3B2”. For the CarServer project, just open the file “CarServer.xcodeproj”, but for the main project open the workspace file “MTNativeIOSappsProject3B2.xcworkspace”. 
 
 When both projects are opened, first run the CarServer project, when it is running there should be “Listening on port 8080” in the output window. Now you are ready to also run the main project, the iPhone simulator should open automatically. 
